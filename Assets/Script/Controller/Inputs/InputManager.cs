@@ -9,8 +9,16 @@ public class InputManager : MonoBehaviour
     
     public void Move(InputAction.CallbackContext context)
     {
-        Debug.Log("Move");
         Vector2 direction = context.ReadValue<Vector2>();
         move = new Vector3(direction.x, 0, direction.y);
+    }
+    public void Attack1(InputAction.CallbackContext context)
+    {
+        if(context.started) Debug.Log("Attack 1");
+    }
+
+    public void Attack2(InputAction.CallbackContext context)
+    {
+        if(context.started) Debug.Log("Attack 2");
     }
 }

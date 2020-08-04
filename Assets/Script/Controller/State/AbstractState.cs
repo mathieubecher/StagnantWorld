@@ -6,6 +6,7 @@ public abstract class AbstractState : StateMachineBehaviour
 {
     protected Controller _controller;
     protected Rigidbody _rigidbody;
+    [SerializeField] protected float speed;
     
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -17,7 +18,7 @@ public abstract class AbstractState : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        SetDirection();
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
@@ -25,16 +26,14 @@ public abstract class AbstractState : StateMachineBehaviour
     {
         
     }
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    
+    
+    public void SetDirection()
     {
-        // Implement code that processes and affects root motion
-    }
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        // Implement code that sets up animation IK (inverse kinematics)
+        Vector3 moveDirection = _rigidbody.velocity;
+        moveDirection.y = 0;
+        
+        _controller.character.SetDirection(moveDirection);
+        _controller.character.SetSpeed(moveDirection.magnitude/speed);
     }
 }

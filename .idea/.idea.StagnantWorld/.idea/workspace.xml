@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd7c2ef7-572d-46bd-a0e3-7345b3bf801f" name="Default Changelist" comment="" />
@@ -9,23 +9,40 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Character.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Interface/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Interface/Statistics.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Controller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/State/AttackState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Interface/Status.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Interface/StatusState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/State/AbstractState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Interface/Interface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Inputs/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Actions/InputActionMap.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/State/IddleState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Controller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Plugins/PlayerInput/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/State/SkillState.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Script/Controller/State/AbstractState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Controller/InputSystem/InputClassic.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Controller/InputSystem/InputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Controller/InputSystem/InputController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Controller/Controller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Controller/State/IddleState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/Character.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/State/AbstractState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/State/SkillState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/State/AttackState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Controller/Inputs/InputManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/Interface/StatusState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/Interface/StatusInfos.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/Interface/Status.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/Interface/Statistics.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/Interface/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/Interface/Interface.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/State/IddleState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/Controller.cs" />
       </list>
     </option>
   </component>
@@ -34,6 +51,7 @@
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -58,6 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1596490391239</updated>
       <workItem from="1596490395667" duration="6844000" />
+      <workItem from="1596553586084" duration="10913000" />
     </task>
     <servers />
   </component>
@@ -74,6 +93,19 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Script/Controller/State/IddleState.cs</url>
+          <line>9</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Script/Controller/State/IddleState.cs" initialLine="9">
+            <startOffsets>
+              <option value="338" />
+            </startOffsets>
+            <endOffsets>
+              <option value="422" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

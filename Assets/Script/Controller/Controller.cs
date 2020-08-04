@@ -5,16 +5,12 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     public InputManager inputs;
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
+    public Character character;
+    public Interface model;
+    public float speedMultiplicator{get=>model.GetSpeed();}
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        
+        model.Init(transform);
     }
-
 }
