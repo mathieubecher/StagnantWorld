@@ -1,70 +1,84 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Item;
 using UnityEngine;
 
-public class Status : MonoBehaviour
+namespace CharacterSheet
 {
-    private Statistics statistics;
-    private bool init;
-    private float life {get => statistics.life; set => statistics.life = value; }
-    private float maxLife {get => statistics.maxLife; set => statistics.maxLife = value; }
-    private float speed {get => statistics.speed; set => statistics.speed = value; }
-    private float maxSpeed {get => statistics.normalSpeed; set => statistics.normalSpeed = value; }
-
-    // Effect
-    private List<StatusState> states; 
-    
-    public void Init(Statistics status)
+    public class Status : MonoBehaviour
     {
-        statistics = status;
-        statistics.Init();
-        states = new List<StatusState>();
-        init = true;
-    }
-
-    void Update()
-    {
-        if (!init) return;
-        foreach (var state in states)
-        {
-            switch (state.type)
+        private Statistics statistics;
+        private bool init;
+        private float life {get => statistics.life; set => statistics.life = value; }
+        public float maxLife {get => statistics.maxLife;
+            set
             {
-                case StatusState.StateType.HEAL :
-                    life += state.value;
-                    if (life > maxLife) life = maxLife;
-                    break;
-                case StatusState.StateType.POISONED :
-                    AddDamage(state.value);
-                    break;
+                statistics.maxLife = value * MAXLIFE;
+                if (statistics.life > statistics.maxLife) statistics.life = statistics.maxLife;
             }
-            if (state.time > 0)
-            {
-                state.time -= Time.deltaTime;
-                if (state.time <= 0) states.Remove(state);
-            }   
         }
-    }
-    
-    /// <summary>
-    /// Inflige des dégats au personnage
-    /// </summary>
-    /// <param name="damage">dégats reçus</param>
-    /// <returns>Vérifie si le personnage est encore en vie</returns>
-    public bool AddDamage(float damage)
-    {
-        life -= damage;
-        return (life > 0);
-    }
-    
-    /// <summary>
-    /// Ajoute un état au personnage
-    /// </summary>
-    /// <param name="state">Etat appliqué au personnage</param>
-    public void AddState(StatusState state)
-    {
-        if (!state.cummulable || !states.Exists(x => x.type == state.type))
+        private float MAXLIFE {get => statistics.MAXLIFE;}
+        private float speed {get => statistics.speed; set => statistics.speed = value; }
+        private float maxSpeed {get => statistics.normalSpeed; set => statistics.normalSpeed = value; }
+
+        // Effect
+        private List<Condition> conditions; 
+        
+        public void Init(Statistics status)
         {
-            states.Add(state);
+            statistics = status;
+            statistics.Init();
+            conditions = new List<Condition>();
+            init = true;
         }
+
+        void Update()
+        {
+            if (!init) return;
+            ConditionsGestor();
+        }
+        
+        /// <summary>
+        /// Inflige des dégats au personnage
+        /// </summary>
+        /// <param name="damage">dégats reçus</param>
+        /// <returns>Vérifie si le personnage est encore en vie</returns>
+        public bool AddDamage(float damage)
+        {
+            life -= damage * Time.deltaTime;
+            return (life > 0);
+        }
+
+        /// <summary>
+        /// Soigne le personnage
+        /// </summary>
+        /// <param name="heal">soins reçus</param>
+        public void AddHeal(float heal)
+        {
+            life += heal * Time.deltaTime;
+            if (life > maxLife) life = maxLife;
+        }
+        
+        /// <summary>
+        /// Ajoute un état au personnage
+        /// </summary>
+        /// <param name="condition">Etat appliqué au personnage</param>
+        public void AddCondition(Condition condition)
+        {
+            if (!condition.cumulative || !conditions.Exists(x => x.type == condition.type))
+            {
+                conditions.Add(condition);
+            }
+        }
+        
+        private void ConditionsGestor()
+        {
+            for (int i = conditions.Count - 1; i >= 0; ++i)
+            {
+                Condition condition = conditions[i];
+                if (condition.Effect(this)) conditions.Remove(condition);
+            }
+        }
+        
     }
 }

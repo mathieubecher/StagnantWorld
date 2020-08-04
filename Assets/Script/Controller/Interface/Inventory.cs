@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Inventory", menuName = "Interface/Inventory")]
-public class Inventory : ScriptableObject
+namespace CharacterSheet
 {
+    [CreateAssetMenu(fileName = "Inventory", menuName = "Interface/Inventory")]
+    public class Inventory : ScriptableObject
+    {
     
+    }
 }

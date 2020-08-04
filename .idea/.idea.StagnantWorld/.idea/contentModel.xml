@@ -18,13 +18,18 @@
               <e p="Inventory.cs" t="Include" />
               <e p="Statistics.cs" t="Include" />
               <e p="Status.cs" t="Include" />
-              <e p="StatusState.cs" t="Include" />
             </e>
             <e p="State" t="Include">
-              <e p="AbstractState.cs" t="Include" />
-              <e p="AttackState.cs" t="Include" />
-              <e p="IddleState.cs" t="Include" />
-              <e p="SkillState.cs" t="Include" />
+              <e p="Abstract.cs" t="Include" />
+              <e p="Attack.cs" t="Include" />
+              <e p="Dead.cs" t="Include" />
+              <e p="Iddle.cs" t="Include" />
+              <e p="Skill.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Item" t="Include">
+            <e p="Weapon" t="Include">
+              <e p="Condition.cs" t="Include" />
             </e>
           </e>
         </e>

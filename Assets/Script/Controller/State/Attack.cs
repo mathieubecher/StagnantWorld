@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackState : AbstractState
+namespace State
 {
+    public class Attack : Abstract
+    {
 
+    }
 }

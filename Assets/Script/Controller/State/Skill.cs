@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillState : AbstractState
+namespace State
 {
+    public class Skill : Abstract
+    {
 
+    }
 }

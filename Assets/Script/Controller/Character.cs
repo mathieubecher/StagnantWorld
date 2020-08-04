@@ -19,7 +19,7 @@ public class Character : MonoBehaviour
 
     public void SetDirection(Vector3 direction)
     {
-        if (direction.magnitude > 0) transform.LookAt(transform.position + direction);
+        if (direction.magnitude > 0.1f) transform.LookAt(transform.position + direction);
     }
 
     public void SetSpeed(float speed)
