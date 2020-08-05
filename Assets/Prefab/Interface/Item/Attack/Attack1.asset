@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd56cddd9d3c94647b5133b836c00ad6, type: 3}
-  m_Name: Inventory
+  m_Script: {fileID: 11500000, guid: 5f3b5d2ef73852340a85fa8836de1f26, type: 3}
+  m_Name: Attack1
   m_EditorClassIdentifier: 
-  weapon1: {fileID: 11400000, guid: 2b97314c05c714a4682ebb305573d92c, type: 2}
-  weapon2: {fileID: 11400000, guid: 5f8f03f39be33f74f9b53567e2e6d78b, type: 2}
+  effect: {fileID: 0}
+  value: 10
+  type: 0
+  animation: Attack1
+  owner: {fileID: 0}

@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="Script" t="Include">
           <e p="Controller" t="Include">
+            <e p="AbstractController.cs" t="Include" />
             <e p="Character.cs" t="Include" />
             <e p="Controller.cs" t="Include" />
             <e p="Inputs" t="Include">
@@ -19,9 +20,11 @@
               <e p="Statistics.cs" t="Include" />
               <e p="Status.cs" t="Include" />
             </e>
+            <e p="Mob.cs" t="Include" />
             <e p="State" t="Include">
               <e p="Abstract.cs" t="Include" />
               <e p="Attack.cs" t="Include" />
+              <e p="Charge.cs" t="Include" />
               <e p="Dead.cs" t="Include" />
               <e p="Iddle.cs" t="Include" />
               <e p="Skill.cs" t="Include" />
@@ -29,7 +32,11 @@
           </e>
           <e p="Item" t="Include">
             <e p="Weapon" t="Include">
+              <e p="Attack.cs" t="Include" />
               <e p="Condition.cs" t="Include" />
+              <e p="Item.cs" t="Include" />
+              <e p="Weapon.cs" t="Include" />
+              <e p="WeaponView.cs" t="Include" />
             </e>
           </e>
         </e>

@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Item
 {
     
-    [CreateAssetMenu(fileName = "new state", menuName = "State Status")]
+    [CreateAssetMenu(fileName = "new condition", menuName = "Item/State/Condition")]
     public class Condition : ScriptableObject
     {
         public enum StateType

@@ -14,6 +14,7 @@ namespace State
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             _controller = animator.GetComponent<Controller>();
+            _controller.state = this;
             _rigidbody = animator.GetComponent<Rigidbody>();
             _rigidbody.velocity = new Vector3(0,_rigidbody.velocity.y,0);
         }

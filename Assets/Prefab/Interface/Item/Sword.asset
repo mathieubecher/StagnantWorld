@@ -9,8 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd56cddd9d3c94647b5133b836c00ad6, type: 3}
-  m_Name: Inventory
+  m_Script: {fileID: 11500000, guid: b86c98aa4bbca4645aaeeadc1d492807, type: 3}
+  m_Name: Sword
   m_EditorClassIdentifier: 
-  weapon1: {fileID: 11400000, guid: 2b97314c05c714a4682ebb305573d92c, type: 2}
-  weapon2: {fileID: 11400000, guid: 5f8f03f39be33f74f9b53567e2e6d78b, type: 2}
+  view: {fileID: 0}
+  material: {fileID: 0}
+  icon: {fileID: 0}
+  name: Sword
+  description: Sword
+  type: 3
+  attacks:
+  - {fileID: 11400000, guid: b928e464ee7a9f34e9ede9eb05feeacf, type: 2}

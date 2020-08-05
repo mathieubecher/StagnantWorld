@@ -9,6 +9,7 @@ namespace State
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateEnter(animator, stateInfo, layerIndex);
+            animator.SetFloat("charge",0);
             animator.SetBool("isDead", false);
         }
 
@@ -20,6 +21,10 @@ namespace State
             _rigidbody.velocity = velocity;
         
             SetDirection();
+        }
+        // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
+        override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        {
         }
     }
 }
