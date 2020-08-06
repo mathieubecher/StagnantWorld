@@ -31,10 +31,11 @@ public class Character : MonoBehaviour
     {
         _animator.SetFloat("speed",speed);
     }
-
+    
     public float SetAttackAnimation(string name)
     {
         _animator.Play(name);
+        _animator.ResetTrigger("Release");
         
         //TODO Bug de gestion possible
         _animator.Update(Time.deltaTime);
@@ -46,6 +47,15 @@ public class Character : MonoBehaviour
     public void ReleaseAnimation()
     {
         _animator.SetTrigger("Release");
-        Debug.Log("Release");
+    }
+
+    public void SetWeaponCollider(Weapon weapon, bool enabled)
+    {
+        SetWeaponCollider((weapon == weapon1.weapon)?0:1, enabled);
+    }
+    public void SetWeaponCollider(int input, bool enabled)
+    {
+        if (input == 0) weapon1.collider.enabled = enabled;
+        else weapon2.collider.enabled = enabled;
     }
 }

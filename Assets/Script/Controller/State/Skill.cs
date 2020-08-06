@@ -6,6 +6,13 @@ namespace State
 {
     public class Skill : Abstract
     {
+        public Skill(Controller controller):base(controller)
+        {
+        
+        }
 
+        public override void Update()
+        {
+        }
     }
 }

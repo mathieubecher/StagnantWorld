@@ -12,7 +12,8 @@ namespace Item
         public Attack charge;
         public Attack release;
 
-        public bool IsChargable()
+        private float releaseTime = InputManager.waitCharge;
+        public bool ExistCharge()
         {
             return charge != null;
         }
@@ -21,22 +22,27 @@ namespace Item
         {
             return Instantiate(charge);
         }
-        public bool IsReleasable(float time)
+
+        public bool ExistRelease()
         {
-            return ((time > 0.2 && release != null) || (time < 0.2f && attacks.Count > 0));
+            return release != null;
+            //return ((time > releaseTime && release != null) || (time < releaseTime && attacks.Count > 0));
         }
-        public Attack GetNext(float time)
+        
+        public Attack GetRelease()
         {
-            if (release == null || (release != null && time < 0.2f))
-            {
-                ++last;
-                if (last >= attacks.Count) last = 0;
-                return Instantiate(attacks[last]);
-            }
-            else
-            {
-                return Instantiate(release);
-            }
+            return Instantiate(release);
+        }
+        public Attack GetNext()
+        {
+            ++last;
+            if (last >= attacks.Count) last = 0;
+            return Instantiate(attacks[last]);
+        }
+
+        public bool ExistAttack()
+        {
+            return attacks.Count > 0;
         }
     }
 }

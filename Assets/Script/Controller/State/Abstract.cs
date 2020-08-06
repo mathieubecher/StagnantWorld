@@ -1,49 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Item;
 using UnityEngine;
 
 namespace State
 {
-    public abstract class Abstract : StateMachineBehaviour
+    public abstract class Abstract
     {
         protected Controller _controller;
         protected Rigidbody _rigidbody;
-        [SerializeField] protected float speed;
-    
-        // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-        override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+
+        public Abstract(Controller controller)
         {
-            _controller = animator.GetComponent<Controller>();
+            _controller = controller;
+            _rigidbody = controller.rigidbody;
             _controller.state = this;
-            _rigidbody = animator.GetComponent<Rigidbody>();
-            _rigidbody.velocity = new Vector3(0,_rigidbody.velocity.y,0);
+            Debug.Log(GetName());
         }
 
-        // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-        override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        {
-        }
+        public abstract void Update();
+        protected virtual void IddleState(){_controller.state = new Iddle(_controller);}
+        public virtual void AttackState(Weapon weapon){}
+        public virtual void ChargeState(Weapon weapon){}
+        public virtual void ReleaseState(){}
 
-        // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-        override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        {
-        
-        }
-    
-    
         protected void SetDirection()
         {
             Vector3 moveDirection = _rigidbody.velocity;
             moveDirection.y = 0;
         
             _controller.character.SetDirection(moveDirection);
-            _controller.character.SetSpeed(moveDirection.magnitude/speed);
+            _controller.character.SetSpeed(moveDirection.magnitude);
         }
 
-        protected float GetSpeed()
+        protected virtual string GetName()
         {
-            return speed * _controller.speedMultiplicator;
+            return GetType().ToString();
         }
+
     }
 
 }

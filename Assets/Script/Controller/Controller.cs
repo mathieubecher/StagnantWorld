@@ -2,52 +2,53 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CharacterSheet;
+using State;
+using UnityEngine.PlayerLoop;
 
 public class Controller : AbstractController
 {
+    [Range(0,20)]
+    public float speed = 8;
     public InputManager inputs;
     public Interface model;
+    [HideInInspector] public Rigidbody rigidbody;
     public float speedMultiplicator{get=>model.GetSpeed();}
 
-    private Animator stateMachine;
-    [HideInInspector] public State.Abstract state;
+    public State.Abstract state;
     
     void Awake()
     {
-        stateMachine = GetComponent<Animator>();
+        rigidbody = GetComponent<Rigidbody>();
         model.Init(transform);
-    }
-    
-    public void Exit()
-    {
-        stateMachine.SetTrigger("Exit");
+        state = new Iddle(this);
     }
 
-    public void Attack(int index, float charge)
+    void Update()
     {
-        stateMachine.SetFloat("charge",charge);
-        
-        stateMachine.SetInteger("attackInput", index);
-        if (!model.IsReleasable(index, charge))
-        {
-            if(state.GetType() == typeof(State.Charge)) ((State.Charge)state).Release();
-            return;
-        }
-        stateMachine.SetTrigger("Attack");
+        state.Update();
     }
+    
     public void Charge(int input)
     {
-        if (model.IsChargable(input))
-        {
-            Debug.Log("charge");
-            stateMachine.SetInteger("attackInput", input);
-            stateMachine.SetTrigger("Charge");
-        }
+        state.ChargeState(model.GetWeapon(input));
+    }
+    public void Attack(int input)
+    {
+        state.AttackState(model.GetWeapon(input));
+    }
+
+    public void Release(int input)
+    {
+        state.ReleaseState();
+    }
+    public float GetSpeed()
+    {
+        return speedMultiplicator * speed;
     }
 
     public override void Hit(float damage)
     {
         model.AddDamage(damage);
     }
-
+    
 }

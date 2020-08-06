@@ -18,13 +18,13 @@ namespace Item
         //public float duration;
         private float time;
         /// <summary>
-        /// Effet de l'arme (null si aucun effet)
-        /// </summary>
-        public Condition effect;
-        /// <summary>
         /// Valeur de l'arme
         /// </summary>
         public float value;
+        /// <summary>
+        /// Effet de l'arme (null si aucun effet)
+        /// </summary>
+        public Condition effect;
 
         public Type type;
         public string animation;
@@ -33,35 +33,41 @@ namespace Item
         
         // Comportement
         [HideInInspector] public Controller owner;
-        private WeaponView _weapon;
+        private Weapon _weapon;
         private bool active = true;
         private List<Character> hits;
         
-        public void OnCall(Controller controller, WeaponView weapon)
+        public void OnCall(Controller controller, Weapon weapon)
         {
             if (type == Type.PROTECT) active = false;
+            hits = new List<Character>();
             
-            time = controller.character.SetAttackAnimation(animation);
             owner = controller;
             _weapon = weapon;
-            hits = new List<Character>();
+            time = controller.character.SetAttackAnimation(animation);
+            controller.character.SetWeaponCollider(weapon, true);
+            
         }
 
         public void Update()
         {
+            
+        }
+
+        public bool Time()
+        {
             if (time >= 0)
             {
-                time -= Time.deltaTime;
-                if(time <= 0) OnExit();    
+                time -= UnityEngine.Time.deltaTime;
+                if (time <= 0) return true;
             }
+            return false;
         }
 
         public void OnExit()
         {
-            _weapon.attack = false;
-            _weapon.actualAttack = null;
-            Destroy(this);
-            owner.Exit();
+            owner.character.ReleaseAnimation();
+            owner.character.SetWeaponCollider(_weapon, false);
         }
 
         public void OnHit(Collider other)

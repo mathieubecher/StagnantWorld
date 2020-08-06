@@ -7,18 +7,19 @@ namespace Item
 {
     public class WeaponView : MonoBehaviour
     {
+        public int id;
         public Weapon weapon;
         public bool attack;
         public Attack actualAttack;
-        public Collider _collider;
+        public Collider collider;
 
         void Awake()
         {
-            _collider = GetComponent<Collider>();
-            _collider.enabled = false;
+            collider = GetComponent<Collider>();
+            collider.enabled = false;
         }
-
-
+        
+        /*
         public void Attack(Controller controller, Attack _attack)
         {
             attack = true;
@@ -26,30 +27,18 @@ namespace Item
             _collider.enabled = true;
             actualAttack.OnCall(controller, this);
         }
+        */
         
         void Update()
         {
-            if (attack)
-            {
-                actualAttack.Update();
-            }
-            else if(_collider.enabled) _collider.enabled = false;
+            
         }
 
         public void OnTriggerEnter(Collider other)
         {
-            if (attack)
-            {
-                actualAttack.OnHit(other);
-            }
+            // TODO gestion trigger
+            // actualAttack.OnHit(other);
         }
 
-        public void Release()
-        {
-            if (attack)
-            {
-                actualAttack.OnExit();
-            }
-        }
     }
 }

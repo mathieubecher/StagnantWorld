@@ -235,10 +235,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9feb8ca0e0a2ac744962722dadb1626f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   weapon: {fileID: 11400000, guid: 2b97314c05c714a4682ebb305573d92c, type: 2}
   attack: 0
   actualAttack: {fileID: 0}
-  _collider: {fileID: 0}
+  collider: {fileID: 0}
 --- !u!33 &8824961542506495004
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -310,7 +311,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4100668692472788032}
   - component: {fileID: 4100668692472788037}
-  - component: {fileID: 4100668692472788034}
   - component: {fileID: 4100668692472788035}
   m_Layer: 0
   m_Name: Controller
@@ -351,26 +351,7 @@ MonoBehaviour:
   character: {fileID: 4100668694058233125}
   inputs: {fileID: 4100668692585677111}
   model: {fileID: 11400000, guid: b4ebae5224f230848ac679276e4749d9, type: 2}
-  state: {fileID: 0}
---- !u!95 &4100668692472788034
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4100668692472788033}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ab0a84f8a0d7e24499a97716b4c8bf65, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  rigidbody: {fileID: 0}
 --- !u!54 &4100668692472788035
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -835,10 +816,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9feb8ca0e0a2ac744962722dadb1626f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   weapon: {fileID: 11400000, guid: 5f8f03f39be33f74f9b53567e2e6d78b, type: 2}
   attack: 0
   actualAttack: {fileID: 0}
-  _collider: {fileID: 0}
+  collider: {fileID: 0}
 --- !u!33 &2430614892345080413
 MeshFilter:
   m_ObjectHideFlags: 0

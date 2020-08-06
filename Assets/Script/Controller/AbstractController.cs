@@ -13,5 +13,6 @@ public abstract class AbstractController : MonoBehaviour
 
     public virtual void Hit(float damage)
     {
+        
     }
 }

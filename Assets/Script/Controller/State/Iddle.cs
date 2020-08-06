@@ -1,20 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Item;
 
 namespace State
 {
     public class Iddle : Abstract
     {
-        public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        public Iddle(Controller controller) : base(controller)
         {
-            base.OnStateEnter(animator, stateInfo, layerIndex);
-            animator.SetFloat("charge",0);
-            animator.SetBool("isDead", false);
+                
         }
-
-        // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-        override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        public override void Update()
         {
             Vector3 velocity = _controller.inputs.move * GetSpeed();
             velocity.y = _rigidbody.velocity.y;
@@ -22,9 +19,18 @@ namespace State
         
             SetDirection();
         }
-        // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-        override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+
+        protected virtual float GetSpeed()
         {
+            return _controller.GetSpeed();
+        }
+
+        public override void AttackState(Weapon weapon) {
+            if(weapon.ExistAttack())_controller.state = new Attack(_controller,weapon, AttackType.ATTACK);
+        }
+        
+        public override void ChargeState(Weapon weapon){
+            if(weapon.ExistCharge())_controller.state = new Attack(_controller,weapon, AttackType.CHARGE);
         }
     }
 }

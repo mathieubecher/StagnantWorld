@@ -48,19 +48,31 @@ namespace CharacterSheet
         
         #region Attack
 
-        public bool IsReleasable(int index, float time)
+        public Weapon GetWeapon(int index)
         {
-            if(index == 0) return _inventory.weapon1.IsReleasable(time);
-            return _inventory.weapon2.IsReleasable(time);
+            return (index == 0) ? _inventory.weapon1 : _inventory.weapon2;
         }
-        public Attack GetAttack(int index, float time)
+        
+        
+        public bool ExistRelease(int index)
         {
-            if(index == 0) return _inventory.weapon1.GetNext(time);
-            return _inventory.weapon2.GetNext(time);
+            if(index == 0) return _inventory.weapon1.ExistRelease();
+            return _inventory.weapon2.ExistRelease();
         }
-        public bool IsChargable(int index)
+
+        public Attack GetRelease(int index)
         {
-            return (index==0)? _inventory.weapon1.IsChargable() : _inventory.weapon2.IsChargable();
+            if(index == 0) return _inventory.weapon1.GetRelease();
+            return _inventory.weapon2.GetRelease();
+        }
+        public Attack GetAttack(int index)
+        {
+            if(index == 0) return _inventory.weapon1.GetNext();
+            return _inventory.weapon2.GetNext();
+        }
+        public bool ExistCharge(int index)
+        {
+            return (index==0)? _inventory.weapon1.ExistCharge() : _inventory.weapon2.ExistCharge();
         }
         public Attack GetCharge(int index)
         {
@@ -69,7 +81,10 @@ namespace CharacterSheet
         #endregion
 
 
-        
+        public bool ExistAttack(int index)
+        {
+            return (index==0)? _inventory.weapon1.ExistAttack() : _inventory.weapon2.ExistAttack();
+        }
     }
 
 

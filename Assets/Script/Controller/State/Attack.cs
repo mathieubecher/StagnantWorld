@@ -1,33 +1,94 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Item;
 
 namespace State
 {
-    public class Attack : Abstract
+    public enum AttackType
     {
-        public Item.Attack attack;
-        // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-        override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        ATTACK, RELEASE, CHARGE
+    }
+    public class Attack : Iddle
+    {
+        protected Item.Attack _attack;
+        protected Weapon _weapon;
+        protected AttackType _type;
+
+        public Attack(Controller controller, Weapon weapon,AttackType type) : base(controller)
         {
-            base.OnStateEnter(animator,stateInfo,layerIndex);
-            if (animator.GetInteger("attackInput") == 0)
-            {
-                attack = _controller.model.GetAttack(0, animator.GetFloat("charge"));
-                _controller.character.weapon1.Attack(_controller, attack);
-            }
-            else
-            {
-                attack = _controller.model.GetAttack(1, animator.GetFloat("charge"));
-                _controller.character.weapon2.Attack(_controller, attack);
-            }
+            _type = type;
+            _attack = GetAttack(weapon);
+            _attack.OnCall(controller,weapon);
         }
 
-        override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        protected Item.Attack GetAttack(Weapon weapon)
         {
-            Vector3 velocity = _controller.inputs.move * GetSpeed() * attack.speed;
-            velocity.y = _rigidbody.velocity.y;
-            _rigidbody.velocity = velocity;
+            _weapon = weapon;
+            
+            switch (_type)
+            {
+                case AttackType.RELEASE:
+                    return _weapon.GetRelease();
+                    break;
+                case AttackType.CHARGE:
+                    return _weapon.GetCharge();
+                    break;
+                default :
+                    return _weapon.GetNext();
+                    break;
+            }
         }
+        
+        public override void Update()
+        {
+            base.Update();
+            _attack.Update();
+            if (_attack.Time()) Exit();
+        }
+
+        public void Exit()
+        {
+            switch (_type)
+            {
+                case AttackType.ATTACK:
+                    IddleState();
+                    break;
+                case AttackType.RELEASE:
+                    IddleState();
+                    break;
+                case AttackType.CHARGE:
+                    if(_weapon.ExistRelease()) _controller.state = new Attack(_controller,_weapon,AttackType.RELEASE);
+                    else IddleState();
+                    break;
+            }
+        }
+        
+        protected override float GetSpeed()
+        {
+            return _controller.GetSpeed() * _attack.speed;
+        }
+        
+        public override void ReleaseState(){
+            Exit();
+        }
+
+        protected override void IddleState()
+        {
+            _attack.OnExit();
+            base.IddleState();
+        }
+
+        public override void AttackState(Weapon weapon) {
+        }
+        
+        public override void ChargeState(Weapon weapon){
+        }
+        
+        protected override string GetName()
+        {
+            return "Attack";
+        }
+        
     }
 }

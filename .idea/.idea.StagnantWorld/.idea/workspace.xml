@@ -12,16 +12,12 @@
     <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Character.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Item/Weapon/Attack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/AbstractController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Interface/Statistics.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/State/Dead.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Controller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Item/Weapon/Weapon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Interface/Interface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/State/Attack.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/State/Charge.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Interface/Status.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/State/Abstract.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Interface/Interface.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Interface/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Inputs/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Actions/InputActionMap.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/State/Iddle.cs" root0="FORCE_HIGHLIGHTING" />
@@ -29,7 +25,6 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Plugins/PlayerInput/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Item/Weapon/Item.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/State/Skill.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Mob.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Item/Weapon/Condition.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -45,27 +40,29 @@
         <option value="$PROJECT_DIR$/Assets/Script/Controller/State/IddleState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Controller/State/AttackState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Controller/State/SkillState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Controller/State/Skill.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Controller/Interface/Statistics.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Controller/Interface/Status.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Controller/State/Dead.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Item/Weapon/Condition.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Item/Weapon/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Controller/Interface/Inventory/Attack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Controller/AbstractController.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Controller/Mob.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Item/Weapon/WeaponView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Controller/State/Iddle.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Item/Weapon/Attack.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Controller/Interface/Interface.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Controller/Interface/Inventory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Controller/State/Abstract.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Controller/Character.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Controller/Controller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Item/Weapon/Weapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Controller/State/Charge.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Controller/State/Attack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/AbstractController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Item/Weapon/WeaponView.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Controller/Inputs/InputManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Item/Weapon/Weapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/State/Dead.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/State/Skill.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Interface/Interface.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/State/Charge.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/State/Release.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/Controller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/State/Abstract.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Item/Weapon/Attack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/Character.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/State/Iddle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/State/Attack.cs" />
       </list>
     </option>
   </component>
@@ -101,7 +98,10 @@
       <workItem from="1596490395667" duration="6844000" />
       <workItem from="1596553586084" duration="11284000" />
       <workItem from="1596578632960" duration="5713000" />
-      <workItem from="1596620065154" duration="23507000" />
+      <workItem from="1596620065154" duration="24283000" />
+      <workItem from="1596705454569" duration="3857000" />
+      <workItem from="1596717123832" duration="1763000" />
+      <workItem from="1596732709693" duration="17182000" />
     </task>
     <servers />
   </component>
