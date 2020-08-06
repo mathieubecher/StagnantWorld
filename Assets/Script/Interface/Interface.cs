@@ -52,39 +52,7 @@ namespace CharacterSheet
         {
             return (index == 0) ? _inventory.weapon1 : _inventory.weapon2;
         }
-        
-        
-        public bool ExistRelease(int index)
-        {
-            if(index == 0) return _inventory.weapon1.ExistRelease();
-            return _inventory.weapon2.ExistRelease();
-        }
-
-        public Attack GetRelease(int index)
-        {
-            if(index == 0) return _inventory.weapon1.GetRelease();
-            return _inventory.weapon2.GetRelease();
-        }
-        public Attack GetAttack(int index)
-        {
-            if(index == 0) return _inventory.weapon1.GetNext();
-            return _inventory.weapon2.GetNext();
-        }
-        public bool ExistCharge(int index)
-        {
-            return (index==0)? _inventory.weapon1.ExistCharge() : _inventory.weapon2.ExistCharge();
-        }
-        public Attack GetCharge(int index)
-        {
-            return  (index==0)? _inventory.weapon1.GetCharge() : _inventory.weapon2.GetCharge();
-        }
         #endregion
-
-
-        public bool ExistAttack(int index)
-        {
-            return (index==0)? _inventory.weapon1.ExistAttack() : _inventory.weapon2.ExistAttack();
-        }
     }
 
 

@@ -9,8 +9,6 @@ namespace Item
     {
         public int id;
         public Weapon weapon;
-        public bool attack;
-        public Attack actualAttack;
         public Collider collider;
 
         void Awake()
@@ -18,17 +16,7 @@ namespace Item
             collider = GetComponent<Collider>();
             collider.enabled = false;
         }
-        
-        /*
-        public void Attack(Controller controller, Attack _attack)
-        {
-            attack = true;
-            actualAttack = _attack;
-            _collider.enabled = true;
-            actualAttack.OnCall(controller, this);
-        }
-        */
-        
+
         void Update()
         {
             
@@ -37,7 +25,7 @@ namespace Item
         public void OnTriggerEnter(Collider other)
         {
             // TODO gestion trigger
-            // actualAttack.OnHit(other);
+            weapon.OnHit(other);
         }
 
     }

@@ -80,10 +80,7 @@ namespace Item
                     hits.Add(target);
                 }
                 else if (other.gameObject.layer == LayerMask.NameToLayer("Weapon") && other.gameObject.TryGetComponent(out WeaponView block)) {
-                    if (block.attack && block.actualAttack.type == Type.PROTECT)
-                    {
-                        Block();
-                    }
+                    Block();
                 }
                 else
                 {

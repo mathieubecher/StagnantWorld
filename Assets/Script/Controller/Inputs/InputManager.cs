@@ -12,7 +12,7 @@ public class InputManager : MonoBehaviour
     public bool ischarge2;
     public float charge1 = 0;
     public float charge2 = 0;
-    public static float waitCharge = 0.15f;
+    public static float waitCharge = 0.2f;
 
     void Update()
     {

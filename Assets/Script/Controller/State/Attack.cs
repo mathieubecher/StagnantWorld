@@ -58,7 +58,7 @@ namespace State
                     IddleState();
                     break;
                 case AttackType.CHARGE:
-                    if(_weapon.ExistRelease()) _controller.state = new Attack(_controller,_weapon,AttackType.RELEASE);
+                    if (_weapon.ExistRelease()) ReleaseState();
                     else IddleState();
                     break;
             }
@@ -70,7 +70,7 @@ namespace State
         }
         
         public override void ReleaseState(){
-            Exit();
+            if(_weapon.ExistRelease()) _controller.state = new Attack(_controller,_weapon,AttackType.RELEASE);
         }
 
         protected override void IddleState()

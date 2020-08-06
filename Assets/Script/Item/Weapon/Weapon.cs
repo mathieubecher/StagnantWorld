@@ -12,6 +12,9 @@ namespace Item
         public Attack charge;
         public Attack release;
 
+
+        private Attack actual;
+
         private float releaseTime = InputManager.waitCharge;
         public bool ExistCharge()
         {
@@ -20,7 +23,8 @@ namespace Item
 
         public Attack GetCharge()
         {
-            return Instantiate(charge);
+            actual = Instantiate(charge);
+            return actual;
         }
 
         public bool ExistRelease()
@@ -31,18 +35,25 @@ namespace Item
         
         public Attack GetRelease()
         {
-            return Instantiate(release);
+            actual = Instantiate(release);
+            return actual;
         }
         public Attack GetNext()
         {
             ++last;
             if (last >= attacks.Count) last = 0;
-            return Instantiate(attacks[last]);
+            actual = Instantiate(attacks[last]);
+            return actual;
         }
 
         public bool ExistAttack()
         {
             return attacks.Count > 0;
+        }
+
+        public void OnHit(Collider other)
+        {
+            actual.OnHit(other);
         }
     }
 }
