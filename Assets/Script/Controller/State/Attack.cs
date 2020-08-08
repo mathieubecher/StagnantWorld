@@ -20,6 +20,7 @@ namespace State
             _type = type;
             _attack = GetAttack(weapon);
             _attack.OnCall(controller,weapon);
+            controller.stateName = GetName();
         }
 
         protected Item.Attack GetAttack(Weapon weapon)
@@ -87,7 +88,7 @@ namespace State
         
         protected override string GetName()
         {
-            return "Attack";
+            return "Attack."+_type;
         }
         
     }

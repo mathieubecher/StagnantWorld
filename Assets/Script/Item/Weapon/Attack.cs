@@ -72,11 +72,12 @@ namespace Item
 
         public void OnHit(Collider other)
         {
+            
             if (active)
             {
                 if (other.gameObject.layer == LayerMask.NameToLayer("Character") && other.gameObject.TryGetComponent(out Character target) && !hits.Contains(target))
                 {
-                    target.controller.Hit(value);
+                    target.controller.Hit(owner, value);
                     hits.Add(target);
                 }
                 else if (other.gameObject.layer == LayerMask.NameToLayer("Weapon") && other.gameObject.TryGetComponent(out WeaponView block)) {

@@ -15,6 +15,7 @@
               <e p="InputManager.cs" t="Include" />
             </e>
             <e p="Mob" t="Include">
+              <e p="Detect.cs" t="Include" />
               <e p="Mob.cs" t="Include" />
             </e>
             <e p="State" t="Include">

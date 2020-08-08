@@ -44,7 +44,7 @@ public class InputManager : MonoBehaviour
         else if (context.canceled && ischarge1)
         {
             ischarge1 = false;
-            if(charge1 < waitCharge) controller.Attack(0);
+            if(charge1 < waitCharge || !controller.model.GetWeapon(0).ExistCharge()) controller.Attack(0);
             else controller.Release(0);
         }
     }
@@ -59,7 +59,7 @@ public class InputManager : MonoBehaviour
         else if (context.canceled && ischarge2)
         {
             ischarge2 = false;
-            if(charge2 < waitCharge) controller.Attack(1);
+            if(charge2 < waitCharge || !controller.model.GetWeapon(1).ExistCharge()) controller.Attack(1);
             else controller.Release(1);
         }
     }

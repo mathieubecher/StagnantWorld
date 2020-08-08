@@ -7,18 +7,13 @@ using UnityEngine.PlayerLoop;
 
 public class Controller : AbstractController
 {
-    [Range(0,20)]
-    public float speed = 8;
     public InputManager inputs;
     public Interface model;
-    [HideInInspector] public Rigidbody rigidbody;
     public float speedMultiplicator{get=>model.GetSpeed();}
 
-    public State.Abstract state;
-    
-    void Awake()
+    protected override void Awake()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        base.Awake();
         model.Init(transform);
         state = new Iddle(this);
     }
@@ -46,7 +41,7 @@ public class Controller : AbstractController
         return speedMultiplicator * speed;
     }
 
-    public override void Hit(float damage)
+    public override void Hit(Controller origin, float damage)
     {
         model.AddDamage(damage);
     }
