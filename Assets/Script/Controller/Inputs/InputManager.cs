@@ -63,4 +63,19 @@ public class InputManager : MonoBehaviour
             else controller.Release(1);
         }
     }
+
+    public void Skill1(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            controller.Skill(0);
+        }
+    }
+    public void Skill2(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            controller.Skill(1);
+        }
+    }
 }

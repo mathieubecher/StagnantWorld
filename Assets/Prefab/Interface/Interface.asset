@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Interface
   m_EditorClassIdentifier: 
   _inventory: {fileID: 11400000, guid: 7fc505a8bbbe5e441bd28a27b55d60e8, type: 2}
-  _statusPrefab: {fileID: 6792433411031531618, guid: f0e7c4285bfa8d54283b90f29ba11ff0,
-    type: 3}
   _statistics: {fileID: 11400000, guid: 301c05efe3f1ca9428a08390acb424e3, type: 2}
+  _skill1: {fileID: 11400000, guid: c7578368b79d21847ad0e0121ccf4c87, type: 2}
+  _skill2: {fileID: 11400000, guid: 6946dc64ac22dc34e9400e2ed7681161, type: 2}

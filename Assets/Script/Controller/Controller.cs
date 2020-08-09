@@ -32,6 +32,10 @@ public class Controller : AbstractController
         state.AttackState(model.GetWeapon(input));
     }
 
+    public void Skill(int input)
+    {
+        state.SkillState(model.GetSkill(input));
+    }
     public void Release(int input)
     {
         state.ReleaseState();

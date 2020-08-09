@@ -15,7 +15,6 @@ namespace State
             _controller = controller;
             _rigidbody = controller.rigidbody;
             _controller.state = this;
-            Debug.Log(GetName());
         }
 
         public abstract void Update();
@@ -38,6 +37,9 @@ namespace State
             return GetType().ToString();
         }
 
+        public virtual void SkillState(Skills.Skill skill)
+        {
+        }
     }
 
 }

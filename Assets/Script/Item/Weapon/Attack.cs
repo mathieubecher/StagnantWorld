@@ -5,18 +5,13 @@ using UnityEngine;
 namespace Item
 {
     [CreateAssetMenu(fileName = "new attack", menuName = "Item/State/Attack")]
-    public class Attack : ScriptableObject
+    public class Attack : Action
     {
         public enum Type
         {
             ATTACK, PROTECT
         }
         
-        /// <summary>
-        /// Durée de l'attaque, -1 si infini
-        /// </summary>
-        //public float duration;
-        private float time;
         /// <summary>
         /// Valeur de l'arme
         /// </summary>
@@ -27,46 +22,32 @@ namespace Item
         public Condition effect;
 
         public Type type;
-        public string animation;
-        public float speed = 0;
 
         
-        // Comportement
-        [HideInInspector] public Controller owner;
         private Weapon _weapon;
         private bool active = true;
         private List<Character> hits;
         
         public void OnCall(Controller controller, Weapon weapon)
         {
+            base.OnCall(controller,controller.character.SetAnimation(animation));
+            
             if (type == Type.PROTECT) active = false;
             hits = new List<Character>();
-            
-            owner = controller;
             _weapon = weapon;
-            time = controller.character.SetAttackAnimation(animation);
             controller.character.SetWeaponCollider(weapon, true);
             
         }
 
-        public void Update()
+
+        public override void Update()
         {
-            
+            base.Update();
         }
 
-        public bool Time()
+        public override void OnExit()
         {
-            if (time >= 0)
-            {
-                time -= UnityEngine.Time.deltaTime;
-                if (time <= 0) return true;
-            }
-            return false;
-        }
-
-        public void OnExit()
-        {
-            owner.character.ReleaseAnimation();
+            base.OnExit();
             owner.character.SetWeaponCollider(_weapon, false);
         }
 

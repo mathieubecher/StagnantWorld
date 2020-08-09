@@ -32,7 +32,7 @@ public class Character : MonoBehaviour
         _animator.SetFloat("speed",speed);
     }
     
-    public float SetAttackAnimation(string name)
+    public float SetAnimation(string name)
     {
         _animator.Play(name);
         _animator.ResetTrigger("Release");
@@ -42,6 +42,12 @@ public class Character : MonoBehaviour
         
         AnimatorStateInfo state = _animator.GetCurrentAnimatorStateInfo(0);
        return (!state.loop)?state.length:-1;
+    }
+
+    public void SetDash(int dash)
+    {
+        if(dash == 0) gameObject.layer = LayerMask.NameToLayer("Dash");
+        else gameObject.layer = LayerMask.NameToLayer("Character");
     }
 
     public void ReleaseAnimation()
@@ -58,4 +64,6 @@ public class Character : MonoBehaviour
         if (input == 0) weapon1.collider.enabled = enabled;
         else weapon2.collider.enabled = enabled;
     }
+
+
 }

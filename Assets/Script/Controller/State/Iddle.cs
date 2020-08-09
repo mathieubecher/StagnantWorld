@@ -9,7 +9,7 @@ namespace State
     {
         public Iddle(Controller controller) : base(controller)
         {
-                
+            
         }
         public override void Update()
         {
@@ -31,6 +31,12 @@ namespace State
         
         public override void ChargeState(Weapon weapon){
             if(weapon.ExistCharge())_controller.state = new Attack(_controller,weapon, AttackType.CHARGE);
+        }
+
+        public override void SkillState(Skills.Skill skill)
+        {
+            _controller.state = new Skill(_controller,skill);
+            
         }
     }
 }

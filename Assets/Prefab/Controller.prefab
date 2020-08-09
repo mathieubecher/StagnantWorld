@@ -330,6 +330,7 @@ Transform:
   m_Children:
   - {fileID: 4100668694058233122}
   - {fileID: 2729270222693392838}
+  - {fileID: 4100668692585677109}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -345,9 +346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0659dbc591c8f644ab7552cf034fe68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stateName: 
+  type: 0
   rigidbody: {fileID: 0}
   character: {fileID: 4100668694058233125}
-  stateName: 
   speed: 8
   inputs: {fileID: 4100668692585677111}
   model: {fileID: 11400000, guid: b4ebae5224f230848ac679276e4749d9, type: 2}
@@ -393,11 +395,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4100668692585677106}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5939968897298628995}
-  m_RootOrder: 5
+  m_Father: {fileID: 4100668692472788032}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4100668692585677111
 MonoBehaviour:
@@ -536,6 +538,36 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: dcc468ba-c611-4b05-98a1-07e9bb6f4776
     m_ActionName: Player/OpenUI[/XInputControllerWindows/start,/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4100668692585677111}
+        m_MethodName: Skill1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 813b23d8-88cd-4579-b39b-0ce9bf7a379c
+    m_ActionName: Player/Skill1[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4100668692585677111}
+        m_MethodName: Skill2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 67be7aeb-23a5-439c-96c1-1f0f19a6c761
+    m_ActionName: Player/Skill2[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
@@ -947,7 +979,6 @@ Transform:
   - {fileID: 8929173181362966253}
   - {fileID: 5219294710420811334}
   - {fileID: 7671098745872725925}
-  - {fileID: 4100668692585677109}
   m_Father: {fileID: 4100668694058233122}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
