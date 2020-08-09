@@ -7,7 +7,8 @@ public class InputManager : MonoBehaviour
 {
     public Vector3 move;
     public Controller controller;
-
+    [SerializeField] private Transform _follow;
+    [SerializeField,Range(0,5)] private float distance = 3;
     public bool ischarge1;
     public bool ischarge2;
     public float charge1 = 0;
@@ -77,5 +78,11 @@ public class InputManager : MonoBehaviour
         {
             controller.Skill(1);
         }
+    }
+
+    public void Camera(InputAction.CallbackContext context)
+    {
+        Vector2 direction = context.ReadValue<Vector2>();
+        _follow.localPosition = new Vector3(direction.x * distance,_follow.localPosition.y,direction.y * distance);
     }
 }

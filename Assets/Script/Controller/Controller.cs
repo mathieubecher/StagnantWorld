@@ -9,6 +9,7 @@ public class Controller : AbstractController
 {
     public InputManager inputs;
     public Interface model;
+    
     public float speedMultiplicator{get=>model.GetSpeed();}
 
     protected override void Awake()

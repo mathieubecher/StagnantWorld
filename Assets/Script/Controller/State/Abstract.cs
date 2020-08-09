@@ -7,6 +7,10 @@ namespace State
 {
     public abstract class Abstract
     {
+        public enum Type
+        {
+            IDDLE, SKILL, ATTACK, HIT, DEAD
+        }
         protected Controller _controller;
         protected Rigidbody _rigidbody;
 
@@ -22,6 +26,7 @@ namespace State
         public virtual void AttackState(Weapon weapon){}
         public virtual void ChargeState(Weapon weapon){}
         public virtual void ReleaseState(){}
+        public virtual void SkillState(Skills.Skill skill) {}
 
         protected void SetDirection()
         {
@@ -37,9 +42,6 @@ namespace State
             return GetType().ToString();
         }
 
-        public virtual void SkillState(Skills.Skill skill)
-        {
-        }
     }
 
 }
