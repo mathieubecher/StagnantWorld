@@ -33,9 +33,9 @@ namespace State
             if(weapon.ExistCharge())_controller.state = new Attack(_controller,weapon, AttackType.CHARGE);
         }
 
-        public override void SkillState(Skills.Skill skill)
+        public override void SkillState(Skills.Competence competence)
         {
-            _controller.state = new Skill(_controller,skill);
+            _controller.state = new Skill(_controller,competence);
             
         }
     }

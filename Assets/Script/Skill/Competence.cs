@@ -6,7 +6,7 @@ namespace Skills
 {
     
     [CreateAssetMenu(fileName = "new skill", menuName = "Skills/Skill")]
-    public class Skill : Action
+    public class Competence : Action
     {
         // Comportement
         [HideInInspector] public Controller owner;

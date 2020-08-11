@@ -10,8 +10,8 @@ namespace CharacterSheet
     {
         [SerializeField] private Inventory _inventory;
         [SerializeField] private Statistics _statistics;
-        [SerializeField] private Skills.Skill _skill1;
-        [SerializeField] private Skills.Skill _skill2;
+        [SerializeField] private Skills.Competence _skill1;
+        [SerializeField] private Skills.Competence _skill2;
     
         private Status _status;
 
@@ -55,7 +55,7 @@ namespace CharacterSheet
         }
         #endregion
 
-        public Skills.Skill GetSkill(int input)
+        public Skills.Competence GetSkill(int input)
         {
             return (input == 0) ? _skill1 : _skill2;
         }

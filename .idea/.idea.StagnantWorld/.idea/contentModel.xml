@@ -16,6 +16,7 @@
             </e>
             <e p="Mob" t="Include">
               <e p="Detect.cs" t="Include" />
+              <e p="DetectGestor.cs" t="Include" />
               <e p="Mob.cs" t="Include" />
             </e>
             <e p="State" t="Include">
@@ -43,7 +44,7 @@
             </e>
           </e>
           <e p="Skill" t="Include">
-            <e p="Skill.cs" t="Include" />
+            <e p="Competence.cs" t="Include" />
           </e>
         </e>
       </e>

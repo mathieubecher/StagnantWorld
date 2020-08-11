@@ -86,7 +86,7 @@ namespace State
         public override void ChargeState(Weapon weapon){
         }
 
-        public override void SkillState(Skills.Skill skill)
+        public override void SkillState(Skills.Competence competence)
         {
         }
         

@@ -8,29 +8,29 @@ namespace State
     public class Skill : Iddle
     {
         public bool invulnerability;
-        protected Skills.Skill _skill;
-        public Skill(Controller controller, Skills.Skill skill) :base(controller)
+        protected Skills.Competence Competence;
+        public Skill(Controller controller, Skills.Competence competence) :base(controller)
         {
-            _skill = skill;
-            _skill.OnCall(controller);
+            Competence = competence;
+            Competence.OnCall(controller);
         }
 
         public override void Update()
         {
-            _skill.Update();
+            Competence.Update();
             base.Update();
-            if (_skill.Time()) Exit();
+            if (Competence.Time()) Exit();
         }
 
         public void Exit()
         {
-            _skill.OnExit();
+            Competence.OnExit();
             IddleState();
         }
         
         protected override float GetSpeed()
         {
-            return _controller.GetSpeed() * _skill.speed;
+            return _controller.GetSpeed() * Competence.speed;
         }
         
         public override void ReleaseState(){
@@ -42,7 +42,7 @@ namespace State
         public override void ChargeState(Weapon weapon){
         }
 
-        public override void SkillState(Skills.Skill skill)
+        public override void SkillState(Skills.Competence competence)
         {
         }
     }

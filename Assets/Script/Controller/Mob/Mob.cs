@@ -7,19 +7,18 @@ public class Mob : AbstractController
 {
     [Range(0,100)] public float life = 100;
     
-    [SerializeField] public Detect detect;
+    [SerializeField] public DetectGestor detect;
     [HideInInspector] public AbstractController target;
     public StateMob.Abstract state;
-    public override void Hit(Controller origin, float damage)
-    {
-        life -= damage;
-        state.FollowState(origin);
-        if (life <= 0) Destroy(gameObject);
-        state.HitState(origin, damage);
-    }
 
+    private Vector3 beginPos;
+    private Quaternion beginRotate;
+    
     protected override void Awake()
     {
+        beginPos = transform.position;
+        beginRotate = transform.rotation;
+        
         base.Awake();
         state = new Iddle(this);
     }
@@ -27,6 +26,14 @@ public class Mob : AbstractController
     void Update()
     {
         state.Update();
+    }
+    
+    public override void Hit(Controller origin, float damage)
+    {
+        life -= damage;
+        state.FollowState(origin);
+        if (life <= 0) Destroy(gameObject);
+        state.HitState(origin, damage);
     }
 }
 
@@ -92,7 +99,7 @@ namespace StateMob
         public override void Update()
         {
             base.Update();
-            if (_target == null)
+            if (_target == null || (_target.transform.position - _controller.transform.position).magnitude > _controller.detect.abandonRadius)
             {
                 _controller.state = new Iddle(_controller);
                 return;

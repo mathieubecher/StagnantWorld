@@ -26,7 +26,7 @@ namespace State
         public virtual void AttackState(Weapon weapon){}
         public virtual void ChargeState(Weapon weapon){}
         public virtual void ReleaseState(){}
-        public virtual void SkillState(Skills.Skill skill) {}
+        public virtual void SkillState(Skills.Competence competence) {}
 
         protected void SetDirection()
         {

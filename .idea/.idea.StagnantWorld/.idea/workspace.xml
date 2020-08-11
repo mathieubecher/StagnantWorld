@@ -9,30 +9,31 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Character.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Skill/Skill.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Item/Weapon/Attack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Interface/Statistics.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Interface/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/AbstractController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Interface/Action.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/State/Dead.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Controller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Item/Weapon/Weapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Interface/Interface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/State/Attack.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Mob/Mob.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Mob/Detect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/State/Abstract.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Inputs/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Actions/InputActionMap.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/State/Iddle.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Item/Weapon/WeaponView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Plugins/PlayerInput/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Item/Weapon/Item.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/State/Skill.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Interface/Status.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Item/Weapon/Condition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Character.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Skill/Competence.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/AbstractController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Interface/Action.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Mob/Mob.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Mob/Detect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Item/Weapon/WeaponView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Controller/Mob/DetectGestor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Item/Weapon/Item.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Interface/Status.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -62,7 +63,6 @@
         <option value="$PROJECT_DIR$/Assets/Script/Item/Weapon/WeaponView.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Controller/AbstractController.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Controller/Mob/Iddle.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Controller/Mob/Mob.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Controller/Mob/Detect.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Item/Weapon/Attack.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Interface/Action.cs" />
@@ -75,6 +75,9 @@
         <option value="$PROJECT_DIR$/Assets/Script/Controller/State/Attack.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Controller/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Controller/Inputs/InputManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Skill/Competence.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/Mob/DetectGestor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Controller/Mob/Mob.cs" />
       </list>
     </option>
   </component>
@@ -117,7 +120,8 @@
       <workItem from="1596813223964" duration="392000" />
       <workItem from="1596820044111" duration="26243000" />
       <workItem from="1596964386561" duration="16870000" />
-      <workItem from="1597000493221" duration="2798000" />
+      <workItem from="1597000493221" duration="3136000" />
+      <workItem from="1597176134832" duration="3839000" />
     </task>
     <servers />
   </component>
